@@ -37,9 +37,9 @@ $users=array($user1,$user2,$user3,$user4);
 
 
 //【3. レビュー部分】 以前の変数名を以下のように書き換え
-$review1 = new Review($plants[0]->getName(), $user1->getName(), '良い！');
-$review2 = new Review($plants[1]->getName(), $user2->getName(), '可愛い！');
-$review3 = new Review($goodsList[0]->getName(), $user1->getName(), '便利！');
+$review1 = new Review($plants[0]->getName(), $user1->getId(), '良い！');
+$review2 = new Review($plants[1]->getName(), $user2->getId(), '可愛い！');
+$review3 = new Review($goodsList[0]->getName(), $user1->getId(), '便利！');
 $reviews = array($review1, $review2, $review3);
 
 // 【旧】(はじめ)　レビューもショップに合わせて変更

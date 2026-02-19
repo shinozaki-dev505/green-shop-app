@@ -12,7 +12,7 @@ class User{
     $this->name = $name;
     $this->gender = $gender;
     self::$count++;  // クラスプロパティ$countの値に1を足
-    $this->id = self::$count++;  //idプロパティにクラスプロパティ$countの値を代入
+    $this->id = self::$count;  //idプロパティにクラスプロパティ$countの値を代入
   }
   
   public function getName(){
