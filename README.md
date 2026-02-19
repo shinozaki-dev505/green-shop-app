@@ -11,23 +11,30 @@ Progateの学習内容をベースに、オブジェクト指向（OOP）とMySQ
 
 注文シミュレーション: 購入個数に応じた税込合計金額を算出。
 
-### 📸 画面遷移
+## 📸 画面遷移
 ユーザーの動線を定義します。
 
-* **1. メニュー一覧画面**: `index.php`
-  > MySQLから取得した商品を一覧表示します。
-  
-  <img width="849" height="1270" alt="image" src="https://github.com/user-attachments/assets/da879970-864b-42b0-a239-4073e098572b" />
+--**1. メニュー一覧画面**: index.php
 
-* **2. 商品詳細画面**: `show.php`
-  > 育て方やレビューなどの詳細を確認できます。
-  
-  <img width="890" height="764" alt="image" src="https://github.com/user-attachments/assets/ee0e9903-c292-42b3-ba2e-a96450f477e7" />
+MySQLから取得した商品を一覧表示します。
 
-* **3. 注文確認画面**: `confirm.php`
-  > 注文内容と最終金額を確認します。
+<img width="700" alt="index" src="https://github.com/user-attachments/assets/da879970-864b-42b0-a239-4073e098572b" />
 
-  <img width="586" height="541" alt="image" src="https://github.com/user-attachments/assets/c286ec77-937f-4c75-8295-fcd19bfbdeb2" />
+　↓ 画像または「詳細を見る」をクリック
+
+--**2. 商品詳細画面**: show.php
+
+育て方やレビューなどの詳細を確認できます。
+
+<img width="700" alt="show" src="https://github.com/user-attachments/assets/ee0e9903-c292-42b3-ba2e-a96450f477e7" />
+
+　↓ 個数を選択して「注文する」をクリック
+
+--**3. 注文確認画面**: confirm.php
+
+注文内容と合計金額を確認します。
+
+<img width="500" alt="confirm" src="https://github.com/user-attachments/assets/c286ec77-937f-4c75-8295-fcd19bfbdeb2" />
 
 
 ## 🛠 使用技術
