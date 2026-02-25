@@ -1,11 +1,22 @@
 <?php
-require_once('menu.php');
+require_once('MenuRepository.php');
 require_once('data.php');
 
-$menuName = $_GET['name'];
-$menu = Menu::findByName($menus, $menuName);
-// $menuに対して$reviewsを引数としてgetReviewsメソッドを呼び出して、戻り値を変数$menuReviewsに代入
-$menuReviews = $menu->getReviews($reviews);
+// 1. URLから「id」を受け取る
+$id = $_GET['id'];
+
+// 2. リポジトリを使って、DBから1件だけ商品を取得する
+$menuRepository = new MenuRepository();
+$menu = $menuRepository->findById($id);
+
+// 3. 商品が見つからなかった場合の安全策
+if (!$menu) {
+    header('Location: index.php');
+    exit;
+}
+
+// 4. その商品のレビューを取得する
+$menuReviews = $menu->getReviews($reviews); // data.phpで定義されている $reviews を使う
 
 ?>
 
@@ -43,18 +54,31 @@ $menuReviews = $menu->getReviews($reviews);
           <?php $user= $review->getUser($users) ?>
           <div class="review-list-item">
             <div class="review-user">
-              <?php if($user->getGender()=='male'): ?>
-                <img src="images/male.png" class='icon-user'>
-              <?php else: ?>
-                <img src="images/female.png" class='icon-user'>
-              <?php endif ?>              
-              <p><?php echo $user->getName() ?></p>
+              <?php if($user): // $user が見つかった場合のみ性別判定をする ?>
+                  <?php if($user->getGender() == 'male'): ?>
+                    <img src="images/male.png" class='icon-user'>
+                  <?php else: ?>
+                    <img src="images/female.png" class='icon-user'>
+                  <?php endif ?>              
+                  <p><?php echo $user->getName() ?></p>
+                <?php else: // ユーザーが見つからなかった場合 ?>
+                  <img src="images/male.png" class='icon-user'>
+                  <p>ゲストユーザー</p>
+              <?php endif ?>
             </div>
             <p><?php echo $review->getBody() ?></p>
           </div>
         <?php endforeach ?>
       </div>
     </div>
+    <div class="delete-section" style="margin: 30px 0; padding: 20px; border-top: 1px solid #eee; text-align: center;">
+    <form action="delete.php" method="post" onsubmit="return confirm('【最終確認】\nこの商品を削除してもよろしいですか？\nデータベースのデータと画像ファイルが完全に削除されます。');">
+        <input type="hidden" name="id" value="<?php echo $menu->getId() ?>">
+        <button type="submit" style="background-color: #e74c3c; color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            🗑️ この商品を削除する
+        </button>
+    </form>
+</div>
     <a href="index.php">← メニュー一覧へ</a>
   </div>
 </body>

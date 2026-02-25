@@ -1,4 +1,20 @@
-<?php require_once('data.php') ?>
+<?php require_once('Menu.php') ?>
+<?php require_once('MenuRepository.php') ?>
+
+<?php 
+// 1. リポジトリを読み込む
+require_once('MenuRepository.php');
+
+// 2. インスタンスを作って、DBからデータを取得する
+$menuRepository = new MenuRepository();
+$menus = $menuRepository->findAll(); // ここで「$menus」という箱にデータを入れています
+
+// 3. (オプション) 注文個数をセットするロジック
+foreach ($menus as $menu) {
+  $orderCount = $_POST[$menu->getName()];
+  $menu->setOrderCount($orderCount);
+}
+?>
 
 <!DOCTYPE html>
 <html>

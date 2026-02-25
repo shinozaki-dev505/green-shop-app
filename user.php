@@ -8,7 +8,8 @@ class User{
   //クラスプロパティ
   private static $count=0;
 
-  public function __construct($name,$gender){
+  public function __construct($id,$name,$gender){
+    $this->id = $id;
     $this->name = $name;
     $this->gender = $gender;
     self::$count++;  // クラスプロパティ$countの値に1を足

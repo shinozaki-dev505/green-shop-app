@@ -258,3 +258,97 @@ input[type="submit"] {
   margin-left: 10px;
   font-size: 15px;
 }
+
+/*入力フォーム　★追加　*/
+.new-wrapper {
+  max-width: 600px;
+  width: 50px auto;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-item p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-item input[type="text"]{
+  width:300px;
+  text-align: left; /* 文字を左から書き始める */
+}
+.form-item input[type="number"]{
+  width:150px;
+  text-align: left; /* 文字を左から書き始める */
+}
+.form-item select {
+  width: 280px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* 幅を100%に収める */
+}
+
+.form-item input[type="file"] {
+  height: 45px; /* 高さをしっかり確保する */
+  line-height: 45px; /* 文字を中央に寄せる */
+  width:300px;
+}
+
+.submit-btn {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+  text-decoration: none;
+}
+/* 親要素（商品ごとの箱）に「基準点」を設定 */
+.menu-item {
+    position: relative; /* 子要素の基準にする */
+}
+
+/* 削除フォームを右上に固定 */
+.delete-container {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+}
+
+/* ボタンの見た目を整える */
+.delete-btn-small {
+    text-decoration: none; /* 下線を消す */
+    color: inherit;       /* 文字色を継承（または黒など） */
+    background: rgba(255, 255, 255, 0.7); /* 少し透ける白 */
+    border-radius: 5px;   /* 角を少し丸く */
+    padding: 2px 5px;
+    display: block;
+}
+
+.delete-btn-small:hover {
+  background: #ff7675; /* マウスを乗せると赤っぽく */
+}
+
+

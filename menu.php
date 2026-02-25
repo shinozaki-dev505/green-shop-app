@@ -1,15 +1,20 @@
 <?php
 class Menu {
+  protected $id;      // 追加
   protected $name;
   protected $price;
   protected $image;
+  protected $created_at; // 追加
   private $orderCount = 0;
   protected static $count = 0;
   
-  public function __construct($name, $price, $image) {
+ // 引数の順番を MenuRepository の new Plant(...) と完全に合わせます
+  public function __construct($id, $name, $image, $price, $created_at) {
+    $this->id = $id;
     $this->name = $name;
-    $this->price = $price;
     $this->image = $image;
+    $this->price = $price;
+    $this->created_at = $created_at;
     self::$count++;
   }
   
@@ -22,7 +27,7 @@ class Menu {
   }
   
   public function getImage() {
-    return $this->image;
+    return "images/" . $this->image;
   }
   
   public function getOrderCount() {
@@ -65,5 +70,8 @@ class Menu {
     }
   }
   
+  public function getId() {
+    return $this->id;
+  }
 }
 ?>
