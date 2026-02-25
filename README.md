@@ -15,15 +15,15 @@ Progateの学習内容をベースに、オブジェクト指向（OOP）とMySQ
 
 1.  **メニュー一覧画面 (`index.php`)**: 商品一覧と削除機能、個数入力。
    
-   <img width="890" height="1324" alt="image" src="https://github.com/user-attachments/assets/cd2ddd8c-03cb-4fd0-b11c-c216176752fc" />
+   <img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/cd2ddd8c-03cb-4fd0-b11c-c216176752fc" />
 
 2.  **商品詳細画面 (`show.php`)**: 詳細情報とレビューの閲覧。
 
-   <img width="890" height="836" alt="image" src="https://github.com/user-attachments/assets/d1e193d5-11e2-4c15-b1ae-92c9d6fc9d1c" />
+   <img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/d1e193d5-11e2-4c15-b1ae-92c9d6fc9d1c" />
 
 3.  **注文確認画面 (`confirm.php`)**: 選択した全商品の明細と合計金額の表示。
 
-   <img width="890" height="827" alt="image" src="https://github.com/user-attachments/assets/dd54bccb-e525-4c4b-834a-372190d1cfc5" />
+   <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/dd54bccb-e525-4c4b-834a-372190d1cfc5" />
 
 ## 🛠 使用技術
 
