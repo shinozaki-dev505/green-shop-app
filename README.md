@@ -21,16 +21,23 @@
 ## 📸 画面構成
 
 1. **ログイン画面 (`login.php`)**
-   <img width="500" alt="ログイン画面" src="https://github.com/user-attachments/assets/cd2ddd8c-03cb-4fd0-b11c-c216176752fc" />
+
+   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/de1090d7-ab93-4c43-b9f4-57982f7c8261" />
 
 2. **メニュー一覧画面 (`index.php`)** *権限に応じて「ゴミ箱」や「新規登録」ボタンが出現*
-   <img width="500" alt="一覧画面" src="https://github.com/user-attachments/assets/cd2ddd8c-03cb-4fd0-b11c-c216176752fc" />
+
+   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/89527655-87a2-440a-98e6-1f68af88760e" />
+
+   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/4d40d228-568e-42be-89f4-519402faac37" />
 
 3. **売上管理 (`sales.php`)** *管理者専用の注文履歴確認画面*
-   <img width="500" alt="売上管理" src="https://github.com/user-attachments/assets/d1e193d5-11e2-4c15-b1ae-92c9d6fc9d1c" />
+
+   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ba512a90-72a4-4312-ac2a-39b2c8de0e1b" />
 
 4. **売れ筋ランキング (`ranking.php`)**
-   <img width="500" alt="ランキング" src="https://github.com/user-attachments/assets/dd54bccb-e525-4c4b-834a-372190d1cfc5" />
+
+   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/7d478be3-7994-403e-aefe-d0e7e83cdcbf" />
+
 
 ## 🛠 使用技術
 
