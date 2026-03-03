@@ -28,7 +28,8 @@
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/89527655-87a2-440a-98e6-1f68af88760e" />
 
-   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/4d40d228-568e-42be-89f4-519402faac37" />
+   <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d3a0396f-8cc6-4589-936b-a41c7426f9f1" />
+
 
 3. **売上管理 (`sales.php`)** *管理者専用の注文履歴確認画面*
 
