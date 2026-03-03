@@ -1,5 +1,6 @@
 <?php require_once('Menu.php') ?>
 <?php require_once('MenuRepository.php') ?>
+<?php require_once('OrderRepository.php')?>
 
 <?php 
 // 1. リポジトリを読み込む
@@ -15,6 +16,29 @@ foreach ($menus as $menu) {
   $menu->setOrderCount($orderCount);
 }
 ?>
+<?php
+$orderRepository = new OrderRepository();
+
+//１．各メニュー（ひまわり、サボテン等）をループで回す
+foreach($menus as $menu){
+  //２，フォームから送られてきた個数を取得（連想配列$key=>$value)
+  $count = $_POST[$menu->getName()];
+
+  //３．個数が1以上の場合だけDBに保存する
+  if($count>0){
+    $totalPrice=$menu->getTaxIncludedPrice()*$count;
+
+    //【重要】ここで orders テーブルに保存！
+    $orderRepository->insert(
+      $menu->getId(),
+      $count,
+      $totalPrice
+    );
+  }
+
+}
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -44,6 +68,11 @@ foreach ($menus as $menu) {
       <p class="order-price"><?php echo $menu->getTotalPrice() ?>円</p>
     <?php endforeach ?>
     <h3>合計金額: <?php echo $totalPayment ?>円</h3>
+  </div>
+  <div class="container">
+      <h2>ご注文ありがとうございました！</h2>
+      <p>売上データが正常に記録されました。</p>
+      <a href="index.php">ショップトップへ戻る</a>
   </div>
 </body>
 </html>

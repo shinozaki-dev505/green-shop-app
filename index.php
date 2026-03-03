@@ -1,9 +1,8 @@
 <?php 
-// data.php（配列）の代わりにリポジトリを読み込む
+session_start();
 require_once('MenuRepository.php');
 
 $menuRepository = new MenuRepository();
-// 最新順ですべて取得
 $menus = $menuRepository->findAll();
 ?>
 
@@ -16,20 +15,45 @@ $menus = $menuRepository->findAll();
   <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="menu-header container">
+  <h2>管理メニュー</h2>
+  <?php if(isset($_SESSION['user_id'])): ?>
+    <a href="sales.php" class="btn-sales">📋 売上明細を見る</a>
+    <a href="ranking.php" class="btn-ranking">🏆 売れ筋ランキング</a>
+    
+      <?php if($_SESSION['role']==='admin'):?>
+        <a href="new.php" class="btn-new" >+ 新規商品を登録する</a>
+      <?php endif; ?>
+
+    <a href="logout.php">ログアウト</a>
+  <?php else: ?>
+    <a href="login.php">管理者ログイン</a>
+  <?php endif; ?>    
+</div>
+
 <div class="menu-wrapper container">
   <h1 class="logo">Green Plant Shop</h1>
+  
+  <?php if (isset($_SESSION['user_id'])): ?>
+    <p style="text-align: right; font-size: 0.8em; color: #666;">
+        ログイン中：<?php echo htmlspecialchars($_SESSION['user_name'],ENT_QUOTES,'UTF-8'); ?>さん
+        (<?php echo $_SESSION['role']==='admin' ? '管理者' : '一般ユーザー';?>)
+      </p>
+  <?php endif; ?>
+
   <h3>メニュー<?php echo count($menus) ?>品</h3>
   
   <form method="post" action="confirm.php">
     <div class="menu-items">
       <?php foreach ($menus as $menu): ?>
         <div class="menu-item">
-          
-          <div class="delete-container">
-            <a href="delete.php?id=<?php echo $menu->getId() ?>" 
-               class="delete-btn-small" 
-               onclick="return confirm('本当に削除しますか？')">🗑️</a>
-          </div>
+          <?php if(isset($_SESSION['role']) && $_SESSION['role']==='admin'): ?>
+            <div class="delete-container">  
+              <a href="delete.php?id=<?php echo $menu->getId() ?>" 
+                class="delete-btn-small" 
+                onclick="return confirm('本当に削除しますか？')">🗑️</a>
+            </div>
+          <?php endif; ?>
 
           <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
           
@@ -60,5 +84,6 @@ $menus = $menuRepository->findAll();
     </div>
   </form> 
 </div>
+
 </body>
 </html>

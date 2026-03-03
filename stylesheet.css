@@ -56,12 +56,14 @@ img {
   color: #4ac0b9;
   display: inline-block;
   padding: 20px 0;
-  margin: 80px 0 30px;
+  margin-top: 10px;    /* ここを小さい数字に変更 */
+  margin-bottom: 20px; /* ロゴの下側（メニュー5品との間） */
   border-top: 5px solid #42c7c1;
   border-bottom: 5px solid #42c7c1;
 }
 
 .menu-wrapper {
+  padding-top: 20px; /* 管理メニューとロゴの間を詰める */
   margin-bottom: 60px;
   text-align: center;
 }
@@ -97,6 +99,8 @@ img {
 .menu-item-image {
   border-radius: 5px;
   height:400px;
+  display:block;
+  width:100%;
 }
 
 .icon-leaf {
@@ -326,14 +330,20 @@ input[type="submit"] {
 }
 /* 親要素（商品ごとの箱）に「基準点」を設定 */
 .menu-item {
+    display: inline-block;
+    width: 40%;
+    padding: 20px;
+    margin-top: 40px;
     position: relative; /* 子要素の基準にする */
+    /* ★これを追加！ */
+    vertical-align: top;
 }
 
 /* 削除フォームを右上に固定 */
 .delete-container {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     z-index: 10;
 }
 
@@ -345,10 +355,17 @@ input[type="submit"] {
     border-radius: 5px;   /* 角を少し丸く */
     padding: 2px 5px;
     display: block;
+    /* ★ここを追加！数字を大きくすれば巨大化 */
+    font-size: 24px; 
+    
+    /* マウスを乗せた時に少し大きくする */
+    transition: transform 0.2s;
 }
 
 .delete-btn-small:hover {
   background: #ff7675; /* マウスを乗せると赤っぽく */
 }
 
-
+.menu-header h2 {
+    margin-top: 20px;
+}

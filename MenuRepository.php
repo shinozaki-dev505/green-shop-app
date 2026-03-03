@@ -47,6 +47,8 @@ class MenuRepository {
                 $data['name'],
                 $data['image'],
                 $data['price'],
+                $data['type'],
+                $data['detail'],
                 $data['created_at'] // コンストラクタに受け渡し
             );
         } else {
@@ -55,6 +57,8 @@ class MenuRepository {
                 $data['name'],
                 $data['image'],
                 $data['price'],
+                $data['type'],
+                $data['detail'],
                 $data['created_at']
             );
         }
@@ -77,18 +81,25 @@ class MenuRepository {
         $stmt->execute([$id]);
     }
 
-    public function Insert($name, $price, $image, $type){
+    //引数$detail追加
+    public function Insert($name, $price, $image, $type, $detail){
+        try{
         //SQLの準備（INSERT文）
-        $stmt = $this->db->prepare("INSERT INTO menus (name,price,image,type)VALUES (:name, :price, :image, :type)");
-    
-        //値をセット
-        $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-        $stmt->bindValue(':price', $price, PDO::PARAM_INT);
-        $stmt->bindValue(':image',$image, PDO::PARAM_STR);
-        $stmt->bindValue(':type',$type, PDO::PARAM_STR); 
-    
-        //実行
-        $stmt->execute();
+            $stmt = $this->db->prepare("INSERT INTO menus (name,price,image,type,detail)VALUES (:name, :price, :image, :type, :detail)");
+        
+            //値をセット
+            $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+            $stmt->bindValue(':price', $price, PDO::PARAM_INT);
+            $stmt->bindValue(':image',$image, PDO::PARAM_STR);
+            $stmt->bindValue(':type',$type, PDO::PARAM_STR); 
+            $stmt->bindValue(':detail',$detail, PDO::PARAM_STR); 
+
+            //実行
+            $stmt->execute();
+        }catch (PDOException $e){
+            die("データベース登録エラー: " . $e->getMessage());
+        }
+ 
     }
 
 }
