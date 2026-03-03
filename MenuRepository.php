@@ -65,20 +65,13 @@ class MenuRepository {
     }
 
     public function delete($id) {
-        // 1. まず、削除対象のデータを取得（画像パスを知るため）
-        $menu = $this->findById($id);
-        
-        if ($menu) {
-            $imagePath = $menu->getImage();
-            // 2. サーバー内の画像ファイルを削除（unlink関数）
-            if (file_exists($imagePath)) {
-                unlink($imagePath);
-            }
-        }
+        // 1. まず子である「orders」から、この商品に関連するデータを消す
+        $stmt_orders = $this->db->prepare('DELETE FROM orders WHERE menu_id = ?');
+        $stmt_orders->execute([$id]);
 
-        // 3. データベースからレコードを削除
-        $stmt = $this->db->prepare("DELETE FROM menus WHERE id = ?");
-        $stmt->execute([$id]);
+        // 2. その後、親である「menus」から商品を消す
+        $stmt = $this->db->prepare('DELETE FROM menus WHERE id = ?');
+        return $stmt->execute([$id]);
     }
 
     //引数$detail追加
