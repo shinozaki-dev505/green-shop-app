@@ -20,7 +20,8 @@ $menus = $menuRepository->findAll();
   <?php if(isset($_SESSION['user_id'])): ?>
     <a href="sales/sales.php" class="btn-sales">📋 売上明細を見る</a>
     <a href="sales/ranking.php" class="btn-ranking">🏆 売れ筋ランキング</a>
-    
+    <a href="../auth/register.php" class="btn register-btn">新規ユーザー登録</a>
+
       <?php if($_SESSION['role']==='admin'):?>
         <a href="products/new.php" class="btn-new" >+ 新規商品を登録する</a>
       <?php endif; ?>
