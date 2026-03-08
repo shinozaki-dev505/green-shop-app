@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once('MenuRepository.php');
+require_once __DIR__ . '/../src/MenuRepository.php';
 
 $menuRepository = new MenuRepository();
 $menus = $menuRepository->findAll();
@@ -11,23 +11,23 @@ $menus = $menuRepository->findAll();
 <head>
   <meta charset="utf-8">
   <title>Green Plant Shop</title>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="menu-header container">
   <h2>管理メニュー</h2>
   <?php if(isset($_SESSION['user_id'])): ?>
-    <a href="sales.php" class="btn-sales">📋 売上明細を見る</a>
-    <a href="ranking.php" class="btn-ranking">🏆 売れ筋ランキング</a>
+    <a href="sales/sales.php" class="btn-sales">📋 売上明細を見る</a>
+    <a href="sales/ranking.php" class="btn-ranking">🏆 売れ筋ランキング</a>
     
       <?php if($_SESSION['role']==='admin'):?>
-        <a href="new.php" class="btn-new" >+ 新規商品を登録する</a>
+        <a href="products/new.php" class="btn-new" >+ 新規商品を登録する</a>
       <?php endif; ?>
 
-    <a href="logout.php">ログアウト</a>
+    <a href="../auth/logout.php">ログアウト</a>
   <?php else: ?>
-    <a href="login.php">管理者ログイン</a>
+    <a href="../auth/login.php">管理者ログイン</a>
   <?php endif; ?>    
 </div>
 
@@ -43,22 +43,22 @@ $menus = $menuRepository->findAll();
 
   <h3>メニュー<?php echo count($menus) ?>品</h3>
   
-  <form method="post" action="confirm.php">
+  <form method="post" action="products/confirm.php" onsubmit="return confirm('この内容で注文してもよろしいですか？');">
     <div class="menu-items">
       <?php foreach ($menus as $menu): ?>
         <div class="menu-item">
           <?php if(isset($_SESSION['role']) && $_SESSION['role']==='admin'): ?>
             <div class="delete-container">  
-              <a href="delete.php?id=<?php echo $menu->getId() ?>" 
+              <a href="products/delete.php?id=<?php echo $menu->getId() ?>" 
                 class="delete-btn-small" 
                 onclick="return confirm('本当に削除しますか？')">🗑️</a>
             </div>
           <?php endif; ?>
 
-          <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
+          <img src="images/<?php echo $menu->getImage() ?>" class="menu-item-image">
           
           <h3 class="menu-item-name">
-            <a href="show.php?id=<?php echo $menu->getId() ?>">
+            <a href="products/show.php?id=<?php echo $menu->getId() ?>">
               <?php echo $menu->getName() ?>
             </a>
           </h3>

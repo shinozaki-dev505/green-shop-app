@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('OrderRepository.php');
+require_once __DIR__ . '/../../src/OrderRepository.php';
 
 $orderRepository = new OrderRepository();
 $ranking = $orderRepository->getRanking();
@@ -8,7 +8,7 @@ $ranking = $orderRepository->getRanking();
 ?>
 <div class="container">
     <h2>🏆 売れ筋ランキング</h2>
-     <p><a href="index.php">一覧に戻る</a></p>
+     <p><a href="../index.php">一覧に戻る</a></p>
     <table border="1" style="width:100%; boeder-collapse: collapse;">
         <thead>
             <tr style="background: #e1f5fe;">

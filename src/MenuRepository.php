@@ -1,7 +1,7 @@
 <?php
-require_once 'database.php';
-require_once 'plant.php';
-require_once 'goods.php';
+require_once __DIR__ . '/Plant.php';
+require_once __DIR__ . '/Goods.php';
+require_once __DIR__ . '/Database.php';
 
 class MenuRepository {
     private $db;

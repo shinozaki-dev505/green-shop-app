@@ -27,7 +27,7 @@ class Menu {
   }
   
   public function getImage() {
-    return "images/" . $this->image;
+    return $this->image;
   }
   
   public function getOrderCount() {

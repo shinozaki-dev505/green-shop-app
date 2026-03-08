@@ -5,7 +5,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin')  {
     die("エラー：削除する権限がありません。");
 }
 
-require_once('MenuRepository.php');
+require_once __DIR__ .'/../../src/MenuRepository.php';
 
 // URLの「?id=数字」からIDを受け取る
 if (isset($_GET['id'])) {
@@ -16,6 +16,6 @@ if (isset($_GET['id'])) {
 }
 
 // 削除後、一覧に戻る
-header('Location: index.php');
+header('Location: ../index.php');
 exit;
 ?>

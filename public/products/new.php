@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION['user_id'])){
     //ログインしていなければログイン画面へ強制送還
-    header('Location: login.php');
+    header('Location: ../../auth/login.php');
     exit;
 }
 ?>
@@ -12,14 +12,14 @@ if(!isset($_SESSION['user_id'])){
 <head>
     <meta charset="utf-8">
     <title>Green Plant SHop - 新規登録</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/stylesheet.css">
     <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="new-wrapper">
     <h2 class="section-title">新しい商品を登録する</h2>
     
-    <form action="create.php" method="post" enctype="multipart/form-data">
+    <form action="store.php" method="post" enctype="multipart/form-data" onsubmit="return confirm('この内容で登録してもよろしいですか？');">
         <div class="form-item">
             <p>名前</p>
             <input type="text" name="name" required>
@@ -84,7 +84,7 @@ if(!isset($_SESSION['user_id'])){
     }
     </script>
     
-    <a href="index.php" class="back-link">← 一覧へ戻る</a>
+    <a href="../index.php" class="back-link">← 一覧へ戻る</a>
   </div>
 </body>
 </html>

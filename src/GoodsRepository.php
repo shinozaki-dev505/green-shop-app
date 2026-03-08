@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require_once('database.php');
+require_once __DIR__ . '/Database.php';
 
 class GoodsRepository{
     private PDO $pdo;

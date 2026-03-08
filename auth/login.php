@@ -19,7 +19,7 @@
                 </div>
                 <button type="submit">ログイン</button>
             </form>
-            <p><a href="index.php">一覧に戻る</p>
+            <p><a href="../public/index.php">一覧に戻る</p>
         </div>
     </body>
 </html>

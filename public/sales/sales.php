@@ -2,11 +2,11 @@
 session_start();
 //管理者チェック
 if(!isset($_SESSION['user_id'])){
-    header('Location: login.php');
+    header('Location: ../../auth/login.php');
     exit;
 }
 
-require_once('OrderRepository.php');
+require_once('../../src/OrderRepository.php');
 $orderRepository = new OrderRepository();
 $sales = $orderRepository->findAllwithName();
 ?>
@@ -16,7 +16,7 @@ $sales = $orderRepository->findAllwithName();
     <head>
         <meta charset="utf-8">
         <title>売上明細 - Green Plant Shop</title>
-        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="../assets/css/stylesheet.css">
     </head>
     <body>
         <div class="container">
@@ -57,7 +57,7 @@ $sales = $orderRepository->findAllwithName();
                             <td>¥<?php echo number_format($sale['total_price']) ?></td>
                             <td>
                                 <?php if(isset($_SESSION['role']) && $_SESSION['role']==='admin'): ?>
-                                    <form action="delete_order.php" method="post" onsubmit="return confirm('この注文を削除してもよろしいですか？');">
+                                    <form action="../products/delete_order.php" method="post" onsubmit="return confirm('この注文を削除してもよろしいですか？');">
                                         <input type="hidden" name="id" value="<?php echo $sale['id']; ?>">
                                         <button type="submit" style="color: red;">削除</button>
                                     </form>                                
@@ -75,7 +75,7 @@ $sales = $orderRepository->findAllwithName();
                     総売上額：￥<?php echo number_format($totalAmount)?>
                 </div>
                 
-                <p><a href="index.php">一覧に戻る</a></p>
+                <p><a href="../index.php">一覧に戻る</a></p>
         </div>
     </body>
 </html>
