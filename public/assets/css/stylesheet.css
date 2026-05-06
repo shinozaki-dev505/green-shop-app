@@ -307,3 +307,92 @@ input[type="submit"].order-btn:hover {
     transform: translateY(-2px);
     text-decoration: none;
 }
+
+/* -----------------------------------------------------------
+   5. ログイン画面（login.php）専用
+----------------------------------------------------------- */
+/* ログイン画面の時だけ背景を変えたい場合、
+   login.php の body に <body class="login-page"> と付けておくと安全です */
+.login-page {
+    background-color: #f0f4f0 !important;
+    /* --- ここから中央寄せの設定 --- */
+    display: flex;           /* Flexboxを有効にする */
+    justify-content: center; /* 左右（横方向）の真ん中 */
+    align-items: center;     /* 上下（縦方向）の真ん中 */
+    height: 100vh;           /* 画面の高さ（View Height）100%分を確保する */
+    margin: 0;               /* 余計な余白を消す */
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    margin: 100px auto; /* 画面中央に寄せる */
+}
+
+.login-container h2 {
+    color: #2d5a27;
+    margin-bottom: 30px;
+    font-size: 24px;
+    border: none; /* 共通のlogoスタイルが当たらないようにリセット */
+}
+
+/* ログイン画面内のボタンだけに限定 */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #4cae4c;
+}
+
+/* ログイン画面のラベル（メールアドレス・パスワードという文字） */
+.login-container label {
+    font-size: 18px;    /* 14pxから18pxにアップ */
+    font-weight: bold;  /* 太字にして読みやすく */
+    margin-bottom: 8px;
+    color: #444;        /* 少し濃い色にして視認性を高める */
+}
+
+/* 入力フォームの中の文字 */
+.login-container input {
+    font-size: 18px;
+    padding: 8px 12px; /* 上下の余白を12pxから8pxに少し絞る */
+    height: auto;      /* 高さを中身に合わせる */
+}
+/* 権限説明エリアのスタイル */
+.auth-info {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd; /* 区切り線 */
+    text-align: left;           /* 説明文は左寄せ */
+    font-size: 13px;            /* 少し小さめにして補足情報らしく */
+    color: #777;
+    line-height: 1.6;
+}
+
+.auth-info ul {
+    list-style: none;           /* 点を消す */
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.auth-info li {
+    margin-bottom: 5px;
+}
+
+.auth-info strong {
+    color: #2d5a27;             /* 権限名はショップカラーの緑に */
+}

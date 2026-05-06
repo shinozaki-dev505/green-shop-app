@@ -1,6 +1,6 @@
 <?php
 //register_process.php
-require_once('../database.php');
+require_once('../src/database.php');
 
 $email = $_POST['email'];
 $raw_password = $_POST['password']; //入力された生のパスワード

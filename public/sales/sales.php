@@ -1,7 +1,7 @@
 <?php
 session_start();
 //管理者チェック
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['user_id']) || $_SESSION['role']!=='admin'){
     header('Location: ../../auth/login.php');
     exit;
 }
@@ -75,7 +75,7 @@ $sales = $orderRepository->findAllwithName();
                     総売上額：￥<?php echo number_format($totalAmount)?>
                 </div>
                 
-                <p><a href="../index.php">一覧に戻る</a></p>
+                <p><a href="../index.php">メニュー一覧に戻る</a></p>
         </div>
     </body>
 </html>

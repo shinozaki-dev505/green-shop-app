@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin'){
+    header('Location: ../index.php'); // またはログイン画面へ
+    exit;
+}
 require_once __DIR__ . '/../../src/OrderRepository.php';
 
 $orderRepository = new OrderRepository();
@@ -8,7 +12,7 @@ $ranking = $orderRepository->getRanking();
 ?>
 <div class="container">
     <h2>🏆 売れ筋ランキング</h2>
-     <p><a href="../index.php">一覧に戻る</a></p>
+     <p><a href="../index.php">メニュー一覧に戻る</a></p>
     <table border="1" style="width:100%; boeder-collapse: collapse;">
         <thead>
             <tr style="background: #e1f5fe;">

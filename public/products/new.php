@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_id'])){
+if(!isset($_SESSION['user_id']) || $_SESSION['role']!=='admin'){
     //ログインしていなければログイン画面へ強制送還
     header('Location: ../../auth/login.php');
     exit;
@@ -84,7 +84,7 @@ if(!isset($_SESSION['user_id'])){
     }
     </script>
     
-    <a href="../index.php" class="back-link">← 一覧へ戻る</a>
+    <a href="../index.php" class="back-link">← メニュー一覧へ戻る</a>
   </div>
 </body>
 </html>

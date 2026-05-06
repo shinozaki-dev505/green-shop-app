@@ -18,17 +18,17 @@ $menus = $menuRepository->findAll();
 <div class="menu-header container">
   <h2>管理メニュー</h2>
   <?php if(isset($_SESSION['user_id'])): ?>
-    <a href="sales/sales.php" class="btn-sales">📋 売上明細を見る</a>
-    <a href="sales/ranking.php" class="btn-ranking">🏆 売れ筋ランキング</a>
-    <a href="../auth/register.php" class="btn register-btn">新規ユーザー登録</a>
-
-      <?php if($_SESSION['role']==='admin'):?>
+    <?php if($_SESSION['role']==='admin'):?>
+      <p style="color: #d9534f; font-weight: bold;">【管理者】の方は、売上明細と売れ筋ランキングも確認できます！</p>
+        <a href="sales/sales.php" class="btn-sales">📋 売上明細を見る</a>
+        <a href="sales/ranking.php" class="btn-ranking">🏆 売れ筋ランキング</a>
+        <a href="../auth/register.php" class="btn register-btn">新規ユーザー登録</a>
         <a href="products/new.php" class="btn-new" >+ 新規商品を登録する</a>
-      <?php endif; ?>
+     <?php endif; ?> 
 
     <a href="../auth/logout.php">ログアウト</a>
   <?php else: ?>
-    <a href="../auth/login.php">管理者ログイン</a>
+    <a href="../auth/login.php">ログイン</a>
   <?php endif; ?>    
 </div>
 

@@ -1,6 +1,6 @@
 <?php
-require_once('MenuRepository.php');
-require_once('data.php');
+require_once __DIR__ . '/../../src/MenuRepository.php';
+require_once __DIR__ . '/../../src/data.php';
 
 // 1. URLから「id」を受け取る
 $id = $_GET['id'];
