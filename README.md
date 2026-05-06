@@ -51,20 +51,24 @@ green-shop-app/
 
 1. **ログイン画面 (`auth/login.php`)**
 
-  <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/00395985-78d9-4a5a-9090-f0babf67768d" />
+  <img width="350" height="500" alt="image" src="https://github.com/user-attachments/assets/00395985-78d9-4a5a-9090-f0babf67768d" />
 
-2. **メニュー一覧画面 (`public/index.php`)** *管理者権限時のみ「削除アイコン」や「管理メニュー」が表示されます。*
+2. **スタッフ登録画面 (`auth/register.php`) ※今回、UIデザインを刷新しました**
+
+  <img width="350" height="500" alt="image" src="https://github.com/user-attachments/assets/8e6cd8c9-0232-44b2-acfc-5a5766d6d246" />
+
+3. **メニュー一覧画面 (`public/index.php`)** *管理者権限時のみ「削除アイコン」や「管理メニュー」が表示されます。*
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/89527655-87a2-440a-98e6-1f68af88760e" />
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d3a0396f-8cc6-4589-936b-a41c7426f9f1" />
 
 
-3. **売上管理 (`public/sales/sales.php`)** *管理者専用の注文履歴確認画面*
+4. **売上管理 (`public/sales/sales.php`)** *管理者専用の注文履歴確認画面*
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ba512a90-72a4-4312-ac2a-39b2c8de0e1b" />
 
-4. **売れ筋ランキング (`public/sales/ranking.php`)**
+5. **売れ筋ランキング (`public/sales/ranking.php`)**
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/7d478be3-7994-403e-aefe-d0e7e83cdcbf" />
 
