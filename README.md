@@ -51,8 +51,7 @@ green-shop-app/
 
 1. **ログイン画面 (`auth/login.php`)**
 
-   <img width="2376" height="3474" alt="localhost_green-shop-app_public_index php(iPad Pro)" src="https://github.com/user-attachments/assets/0cb276b6-a411-485f-9ee1-4536322e228e" />
-
+  <img width="500" height="500" alt="localhost_green-shop-app_auth_login php(iPad Pro)" src="https://github.com/user-attachments/assets/47630119-c688-4d23-913a-18722b26e025" />
 
 2. **メニュー一覧画面 (`public/index.php`)** *管理者権限時のみ「削除アイコン」や「管理メニュー」が表示されます。*
 
