@@ -61,14 +61,15 @@ green-shop-app/
 
    <img width="800" height="1000" alt="localhost_green-shop-app_public_index php(iPad Pro)" src="https://github.com/user-attachments/assets/00cfb99a-62be-4fea-9818-7809b62867e7" />
 
+4. **新商品を登録する (`public/products/new.php`) **
+
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d3a0396f-8cc6-4589-936b-a41c7426f9f1" />
 
-
-4. **売上管理 (`public/sales/sales.php`)** *管理者専用の注文履歴確認画面*
+5. **売上管理 (`public/sales/sales.php`)** *管理者専用の注文履歴確認画面*
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ba512a90-72a4-4312-ac2a-39b2c8de0e1b" />
 
-5. **売れ筋ランキング (`public/sales/ranking.php`)**
+6. **売れ筋ランキング (`public/sales/ranking.php`)**
 
    <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/7d478be3-7994-403e-aefe-d0e7e83cdcbf" />
 
