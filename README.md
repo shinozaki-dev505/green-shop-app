@@ -73,7 +73,7 @@ green-shop-app/
 
 3. **メニュー一覧画面 (`public/index.php`)** *管理者権限時のみ「削除アイコン」や「管理メニュー」が表示されます。*
 
-   <img width="800" height="1000" alt="localhost_green-shop-app_public_index php(iPad Pro)" src="https://github.com/user-attachments/assets/00cfb99a-62be-4fea-9818-7809b62867e7" />
+  <img width="2376" height="3822" alt="localhost_green-shop-app_public_index php(iPad Pro)_weather" src="https://github.com/user-attachments/assets/3a2971cf-2d1a-43e2-82a8-af4102371284" />
 
 4. **新商品を登録する (`public/products/new.php`) **
 
