@@ -34,7 +34,7 @@ class Menu {
     return $this->orderCount;
   }
   
-  public function setOrderCount($orderCount) {
+  public function setOrderCountF($orderCount) {
     $this->orderCount = $orderCount;
   }
   
